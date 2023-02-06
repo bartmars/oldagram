@@ -1,9 +1,45 @@
 <html>
-    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <title>Oldegram</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <img src="images/logo.png">
+        
+        <div class="container">
+
+            <header>
+                <div class="flex flex-space-between border-bottom">
+                    <img src="images/logo.png" alt="" class="logo-img">
+                    <img src="images/user-avatar.png" alt="" class="avatar-img">
+                </div>
+            </header>
+
+            <section>
+                <article>
+                    <div class="flex-container">
+                        <img src="images/avatar-vangogh.jpg" alt="TODO" class="avatar-img">
+                        <div>
+                            <p class="name">Vincent van Gogh</p>
+                            <p class="location">Zudert, Netherlands</p>
+                        </div>
+                    </div>
+                    <img src="images/post-vangogh.jpg" alt="TODO" class="post-img">
+                    <div class="icons-div">
+                        <img src="images/icon-heart.png" alt="" class="icon-img">
+                        <img src="images/icon-comment.png" alt="" class="icon-img">
+                        <img src="images/icon-dm.png" alt="" class="icon-img">
+                    </div>
+                    <p class="likes">21,492 likes</p>
+                    <p><span class="username">vincey1853</span> just took a few mushrooms lol</p>
+                </article>
+            </section>
+
+        </div>
+
         <script src="index.js"></script>
     </body>
 </html>
