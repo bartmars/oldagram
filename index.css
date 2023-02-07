@@ -4,6 +4,10 @@ html, body {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+article {
+    border-bottom: solid 1px #eeeeee;
+}
+
 .container {
     width: 375px;
 }
@@ -51,15 +55,21 @@ html, body {
 }
 
 .icons-div {
-    margin: 25px 10px 10px 20px;
+    margin: 21px 10px 12px 10px;
 }
 
 .icon-img {
     width: 22.38px;
+    margin-right: 10px;
 }
 
 .name,
 .username,
 .likes {
     font-weight: bold;
+}
+
+.likes,
+.username {
+    margin-left: 10px;
 }

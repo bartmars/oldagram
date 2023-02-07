@@ -28,3 +28,9 @@ const posts = [
     }
 ]
 
+const name = document.getElementById("name")
+const username = document.getElementById("username")
+const location = document.getElementById("location")
+const avatarImg = document.getElementById("avatar-img")
+const postImg = document.getElementById("post-img")
+const comment = document.getElementById("comment")
