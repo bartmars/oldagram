@@ -29,48 +29,47 @@ const posts = [
 ]
 
 const postsEl = document.getElementById("posts")
+const likeEl = document.getElementById("like")
 
-const nameEl = document.getElementById("name")
-const usernameEl = document.getElementById("username")
-const locationEl = document.getElementById("location")
-const avatarImg = document.getElementById("avatar-img")
-const postImg = document.getElementById("post-img")
-const commentEl = document.getElementById("comment")
-const likesEl = document.getElementById("likes")
+let userLikes = 0
 
 function renderPost(int) {
-    nameEl.textContent = posts[int]["name"]
-    usernameEl.textContent = posts[int]["username"]
-    locationEl.textContent = posts[int]["location"]
-    avatarImg.textContent = posts[int]["avatar-img"]
-    postImg.innerHTML = posts[int]["post-img"]
-    likesEl.textContent = posts[int]["likes"]
-    commentEl.innerHTML = posts[int]["comment"]
-
-`    <article>
+    let name = posts[int]["name"]
+    let username = posts[int]["username"]
+    let location = posts[int]["location"]
+    let avatar = posts[int]["avatar"]
+    let post = posts[int]["post"]
+    let comment = posts[int]["comment"]
+    let likes = posts[int]["likes"]
+    
+    return `<article>
         <div class="flex-container">
-            <img src="${avatarImg.value}" alt="TODO" class="avatar-img">
+            <img src="${avatar}" alt="A avatar of the user that posted the image" class="avatar-img">
             <div>
-                <p id="name" class="name">${nameEl.value }</p>
-                <p id="location" class="location">${locationEl.value}</p>
+                <p id="name${int}" class="name">${name}</p>
+                <p id="location${int}" class="location">${location}</p>
             </div>
         </div>
-        <img id="post-img" src="${postImg.value}" alt="TODO" class="post-img">
+        <img id="post-img${int}" src="${post}" alt="A picture that the user posted" class="post-img">
         <div class="icons-div">
-            <img src="images/icon-heart.png" alt="" class="icon-img">
-            <img src="images/icon-comment.png" alt="" class="icon-img">
-            <img src="images/icon-dm.png" alt="" class="icon-img">
+            <img id="like${int}" src="images/icon-heart.png" alt="A heart icon to like the posted image" class="icon-img">
+            <img id="comment${int}" src="images/icon-comment.png" alt="A text balloon to comment on the posted image" class="icon-img">
+            <img id="dm${int}" src="images/icon-dm.png" alt="A paper plane to direct message the user" class="icon-img">
         </div>
-        <p id="likes" class="likes">${likesEl.value}</p>
-        <p id="comment"><span id="username" class="username">${usernameEl.value}</span> ${commentEl.value}</p>
+        <p id="likes${int}" class="likes">${likes}</p>
+        <p id="comment${int}"><span id="username" class="username">${username}</span> ${comment}</p>
     </article>`
 }
 
 function render(posts) {
     for (let i = 0; i < posts.length; i++) {
-        return renderPost(i)
+        postsEl.innerHTML += renderPost(i)
     }
-    // renderPost(2)
 }
 
 render(posts)
+
+// likeEl.addEventListener("dblclick", function() {
+//     userLikes = posts[int]["likes"]
+//     console.log(userLikes)
+// })
