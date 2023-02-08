@@ -43,37 +43,34 @@ function renderPost(int) {
     usernameEl.textContent = posts[int]["username"]
     locationEl.textContent = posts[int]["location"]
     avatarImg.textContent = posts[int]["avatar-img"]
-    postImg.innerHTML = `<img id="post-img" class="post-img" src="${posts[int]["post-img"]}" alt="TODO">`
-    likesEl.textContent = ${posts[int]["likes"]}
-    commentEl.innerHTML = ${posts[int]["comment"]}
+    postImg.innerHTML = posts[int]["post-img"]
+    likesEl.textContent = posts[int]["likes"]
+    commentEl.innerHTML = posts[int]["comment"]
 
 `    <article>
         <div class="flex-container">
-            <img src="images/avatar-vangogh.jpg" alt="TODO" class="avatar-img">
+            <img src="${avatarImg.value}" alt="TODO" class="avatar-img">
             <div>
-                <p id="name" class="name"></p>
-                <p id="location" class="location">Zudert, Netherlands</p>
+                <p id="name" class="name">${nameEl.value }</p>
+                <p id="location" class="location">${locationEl.value}</p>
             </div>
         </div>
-        <img id="post-img" src="images/post-vangogh.jpg" alt="TODO" class="post-img">
+        <img id="post-img" src="${postImg.value}" alt="TODO" class="post-img">
         <div class="icons-div">
             <img src="images/icon-heart.png" alt="" class="icon-img">
             <img src="images/icon-comment.png" alt="" class="icon-img">
             <img src="images/icon-dm.png" alt="" class="icon-img">
         </div>
-        <p id="likes" class="likes">21,492 likes</p>
-        <p id="comment"><span id="username" class="username">${username.textContent}</span> ${comment.textContent}</p>
+        <p id="likes" class="likes">${likesEl.value}</p>
+        <p id="comment"><span id="username" class="username">${usernameEl.value}</span> ${commentEl.value}</p>
     </article>`
-
-
-    console.log(postImg)
 }
 
 function render(posts) {
-    // for (let i = 0; i < posts.length; i++) {
-    //     return renderPost(i)
-    // }
-    renderPost(2)
+    for (let i = 0; i < posts.length; i++) {
+        return renderPost(i)
+    }
+    // renderPost(2)
 }
 
 render(posts)
