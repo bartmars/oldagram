@@ -29,35 +29,27 @@ const posts = [
 ]
 
 const postsEl = document.getElementById("posts")
-const likeEl = document.getElementById("like0")
+const likeEl = document.getElementsByName("like0")
 
 let userLikes = 0
 
 function renderPost(int) {
-    let name = posts[int]["name"]
-    let username = posts[int]["username"]
-    let location = posts[int]["location"]
-    let avatar = posts[int]["avatar"]
-    let post = posts[int]["post"]
-    let comment = posts[int]["comment"]
-    let likes = posts[int]["likes"]
-    
     return `<article>
         <div class="flex-container">
-            <img src="${avatar}" alt="A avatar of the user that posted the image" class="avatar-img">
+            <img src="${posts[int].avatar}" alt="A avatar of the user that posted the image" class="avatar-img">
             <div>
-                <p id="name${int}" class="name">${name}</p>
-                <p id="location${int}" class="location">${location}</p>
+                <p id="name${int}" class="name">${posts[int].name}</p>
+                <p id="location${int}" class="location">${posts[int].location}</p>
             </div>
         </div>
-        <img id="post-img${int}" src="${post}" alt="A picture that the user posted" class="post-img">
+        <img id="post-img${int}" src="${posts[int].post}" alt="A picture that the user posted" class="post-img">
         <div class="icons-div">
             <img id="like${int}" src="images/icon-heart.png" alt="A heart icon to like the posted image" class="icon-img">
             <img id="comment${int}" src="images/icon-comment.png" alt="A text balloon to comment on the posted image" class="icon-img">
             <img id="dm${int}" src="images/icon-dm.png" alt="A paper plane to direct message the user" class="icon-img">
         </div>
-        <p id="likes${int}" class="likes">${likes} likes</p>
-        <p id="comment${int}"><span id="username" class="username">${username}</span> ${comment}</p>
+        <p id="likes${int}" class="likes">${posts[int].likes} likes</p>
+        <p id="comment${int}"><span id="username" class="username">${posts[int].username}</span> ${posts[int].comment}</p>
     </article>`
 }
 
@@ -68,3 +60,4 @@ function render(posts) {
 }
 
 render(posts)
+
