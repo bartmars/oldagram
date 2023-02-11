@@ -29,7 +29,7 @@ const posts = [
 ]
 
 const postsEl = document.getElementById("posts")
-const likeEl = document.getElementById("like")
+const likeEl = document.getElementById("like0")
 
 let userLikes = 0
 
@@ -56,7 +56,7 @@ function renderPost(int) {
             <img id="comment${int}" src="images/icon-comment.png" alt="A text balloon to comment on the posted image" class="icon-img">
             <img id="dm${int}" src="images/icon-dm.png" alt="A paper plane to direct message the user" class="icon-img">
         </div>
-        <p id="likes${int}" class="likes">${likes}</p>
+        <p id="likes${int}" class="likes">${likes} likes</p>
         <p id="comment${int}"><span id="username" class="username">${username}</span> ${comment}</p>
     </article>`
 }
@@ -68,8 +68,3 @@ function render(posts) {
 }
 
 render(posts)
-
-// likeEl.addEventListener("dblclick", function() {
-//     userLikes = posts[int]["likes"]
-//     console.log(userLikes)
-// })
